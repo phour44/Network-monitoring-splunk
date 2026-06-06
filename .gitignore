@@ -1,0 +1,13 @@
+# Exclude blueprint source document (not for publication)
+Splunk_SIEM_Project_Report.docx
+
+# Exclude build script
+build_report.py
+
+# Exclude Word temp files
+~$*.docx
+
+# System files
+Thumbs.db
+.DS_Store
+desktop.ini
