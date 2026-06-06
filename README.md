@@ -47,31 +47,31 @@ This project demonstrates a **production-grade SIEM deployment** using Splunk En
 │                        SIEM ARCHITECTURE                            │
 ├─────────────────────────────────────────────────────────────────────┤
 │                                                                     │
-│   ┌──────────────────────┐         ┌──────────────────────────┐    │
-│   │   MONITORED ENDPOINT │         │     SPLUNK SIEM SERVER   │    │
-│   │   ──────────────────  │         │   ──────────────────────  │    │
-│   │                      │  TCP    │                          │    │
-│   │  Windows 10/11       │  9997   │  Windows Server 2022     │    │
-│   │  DESKTOP-EPLK670     │ ──────► │  WIN-CJ0J0L41QG0        │    │
-│   │                      │         │                          │    │
-│   │  ┌──────────────┐   │         │  ┌──────────────────┐   │    │
-│   │  │  Universal    │   │         │  │ Splunk Enterprise │   │    │
-│   │  │  Forwarder    │   │         │  │     Indexer       │   │    │
-│   │  │  v9.4.3       │   │         │  │     v9.4.1        │   │    │
-│   │  └──────────────┘   │         │  └──────────────────┘   │    │
-│   │                      │         │          │              │    │
-│   │  Data Sources:       │         │          ▼              │    │
-│   │  • Security Logs     │         │  ┌──────────────────┐   │    │
-│   │  • System Logs       │         │  │  Search Head      │   │    │
-│   │  • Setup Logs        │         │  │  (Web UI :8000)   │   │    │
-│   │  • Application Logs  │         │  └──────────────────┘   │    │
-│   └──────────────────────┘         └──────────────────────────┘    │
+│   ┌──────────────────────┐         ┌──────────────────────────┐     │
+│   │   MONITORED ENDPOINT │         │     SPLUNK SIEM SERVER   │     │
+│   │   ────────────────── │         │   ────────────────────── │     │
+│   │                      │  TCP    │                          │     │
+│   │  Windows 10/11       │  9997   │  Windows Server 2022     │     │
+│   │  DESKTOP-EPLK670     │ ──────► │  WIN-CJ0J0L41QG0         │     │
+│   │                      │         │                          │     │
+│   │  ┌───────────────┐   │         │  ┌───────────────────┐   │     │
+│   │  │  Universal    │   │         │  │ Splunk Enterprise │   │     │
+│   │  │  Forwarder    │   │         │  │     Indexer       │   │     │
+│   │  │  v9.4.3       │   │         │  │     v9.4.1        │   │     │
+│   │  └───────────────┘   │         │  └───────────────────┘   │     │
+│   │                      │         │          │               │     │
+│   │  Data Sources:       │         │          ▼               │     │
+│   │  • Security Logs     │         │  ┌──────────────────┐    │     │
+│   │  • System Logs       │         │  │  Search Head     │    │     │
+│   │  • Setup Logs        │         │  │  (Web UI :8000)  │    │     │
+│   │  • Application Logs  │         │  └──────────────────┘    │     │
+│   └──────────────────────┘         └──────────────────────────┘     │
 │                                                                     │
-│   ┌─────────────────────────────────────────────────────────┐      │
-│   │                FIREWALL CONFIGURATION                    │      │
-│   │  Inbound:  TCP 8000 (Web), TCP 9997 (Data Receiving)    │      │
-│   │  Outbound: splunkd.exe → Indexer (TCP 9997)             │      │
-│   └─────────────────────────────────────────────────────────┘      │
+│   ┌─────────────────────────────────────────────────────────┐       │
+│   │                FIREWALL CONFIGURATION                   │       │
+│   │  Inbound:  TCP 8000 (Web), TCP 9997 (Data Receiving)    │       │
+│   │  Outbound: splunkd.exe → Indexer (TCP 9997)             │       │
+│   └─────────────────────────────────────────────────────────┘       │
 └─────────────────────────────────────────────────────────────────────┘
 ```
 
